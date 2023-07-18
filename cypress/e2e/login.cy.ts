@@ -1,13 +1,23 @@
+import { TopBar } from "../pages/TopBar.page";
+import { Login } from "../pages/Login.page";
+
+
+const topBar = new TopBar();
+const login = new Login();
+
 describe('Visit Page', () => {
-  it('passes', () => {
-    cy.visit('http://autopract.com/')
-    expect(true).to.equal(true)
-  })
+  before(function () {
+    cy.fixture('login-users').then(function (users) {
+      this.users = users;
+    });
+  });
 
-  it('Failed Test', () => {
-    cy.visit('http://autopract.com/')
-    expect(1).to.equal(2)
-  })
+  it('Successfull Login', function () {
+    cy.visit('/');
+    topBar.GoToLoginPage();
 
+    const user = (this as any).users.success;
 
-})
+    login.PerformLogin(user.email, user.password);
+  });
+});
