@@ -6,8 +6,8 @@ describe('Visit Page', () => {
 
   it('Failed Test', () => {
     cy.visit('http://autopract.com/')
-    expect(true).to.equal(false)
+    expect(1).to.equal(2)
   })
 
-  
+
 })
