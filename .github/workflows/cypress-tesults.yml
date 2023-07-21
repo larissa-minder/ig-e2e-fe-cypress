@@ -1,0 +1,24 @@
+name: Cypress Tesults
+
+on:
+  workflow_dispatch:
+    inputs:
+      cli:
+        description: Run by cypress command line
+        default: node runner.js
+        
+jobs:
+  cypress-electron-tests:
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:node-18.16.0-chrome-114.0.5735.133-1-ff-114.0.2-edge-114.0.1823.51-1
+      options: --user 1001
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3.5.3
+        
+      - name: Install dependencies
+        run: yarn install
+        
+      - name: Run e2e tests
+        run: ${{  github.event.inputs.cli }}
