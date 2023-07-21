@@ -12,7 +12,7 @@ describe('Visit Page', () => {
     });
   });
 
-  it('Successfull Login', function () {
+  it.only('Successfull Login', function () {
     cy.visit('/');
     topBar.GoToLoginPage();
 

@@ -6,10 +6,9 @@ const { cloudPlugin } = require("cypress-cloud/plugin");
 
 export default defineConfig({
   reporter: 'cypress-mochawesome-reporter',
-  videoCompression: 32,
+  videoCompression: 15,
   projectId: "htok9w",
   defaultCommandTimeout:4000,
-  videoUploadOnPasses:false,
   reporterOptions: {
     charts: true,
     reportPageTitle: 'E2E IG REPORT',
