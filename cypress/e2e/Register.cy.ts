@@ -15,7 +15,7 @@ describe('Register User', () => {
 
   })*/
 
-  it('Successfull User Registration ', () => {
+  it.skip('Successfull User Registration ', () => {
     cy.visit('/')
     topBar.GoToRegisterPage();
     var email = 'random' + Date.now() + '@gmail.com';

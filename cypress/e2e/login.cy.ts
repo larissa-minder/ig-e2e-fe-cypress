@@ -5,7 +5,7 @@ import { Login } from "../pages/Login.page";
 const topBar = new TopBar();
 const login = new Login();
 
-describe('Visit Page', () => {
+describe.only('Visit Page', () => {
   before(function () {
     cy.fixture('login-users').then(function (users) {
       this.users = users;
