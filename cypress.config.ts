@@ -18,8 +18,8 @@ export default defineConfig({
       MochawesomeReporter(on);
     },
     baseUrl: 'http://tutorialsninja.com/demo',
-    //viewportWidth: 1920,
-    //viewportHeight: 1080,
+    viewportWidth: 1920,
+    viewportHeight: 1080,
   },
   
 });
